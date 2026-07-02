@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDP for Dependent Data</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Research on Local Differential Privacy for Dependent Data</h1>
+    <p>Information-theoretic privacy analysis, dependent data, and LDP mechanisms</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#themes">Research Themes</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        My research focuses on privacy-preserving data collection under
+        Local Differential Privacy (LDP), especially for multidimensional
+        and statistically dependent user data.
+      </p>
+      <p>
+        Standard LDP mechanisms often assume that attributes are independent.
+        However, real-world data frequently contains strong correlations.
+        These dependencies may cause unintended information leakage, where
+        observing the perturbed output of one attribute reveals information
+        about another private attribute.
+      </p>
+    </section>
+
+    <section id="themes">
+      <h2>Research Themes</h2>
+
+      <div class="card">
+        <h3>Correlation-Induced Leakage</h3>
+        <p>
+          Quantifying how dependencies between attributes amplify privacy
+          leakage under LDP.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Dependency-Aware Privacy Metrics</h3>
+        <p>
+          Developing information-theoretic measures and bounds for privacy
+          leakage in dependent data.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Coordinated Perturbation</h3>
+        <p>
+          Designing LDP mechanisms that use prior dependency knowledge to
+          reduce unintended disclosure.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Privacy–Utility Trade-offs</h3>
+        <p>
+          Evaluating mechanisms using estimation error, leakage reduction,
+          and attribute-inference attacks.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="card">
+        <h3>Dependency Triad</h3>
+        <p>
+          A framework for summarizing dependency structure and bounding
+          correlation-induced privacy leakage.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>CoP: Coordinated Perturbation</h3>
+        <p>
+          A dependency-aware LDP mechanism for controlled disclosure under
+          multidimensional data collection.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Prior-Aware Sampling under LDP</h3>
+        <p>
+          A study of how prior knowledge can guide sampling and privacy-budget
+          allocation in dependent multidimensional data.
+        </p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          <strong>CoP: Coordinated Perturbation for Controlled Disclosure Under Local Differential Privacy</strong>
+          <br />
+          PETS 2026.
+        </li>
+        <li>
+          <strong>The Hidden Cost of Correlation: Rethinking Privacy Leakage in Local Differential Privacy</strong>
+          <br />
+          Manuscript.
+        </li>
+        <li>
+          <strong>Dependency Triad: A Metric to Quantify Dependencies Between Attributes for Local Differential Privacy</strong>
+          <br />
+          Manuscript / Artifact.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Sandaru Jayawardana<br />
+        School of Computer Science, The University of Sydney
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/YOUR_USERNAME">YOUR_USERNAME</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Sandaru Jayawardana</p>
+  </footer>
+
+</body>
+</html>
