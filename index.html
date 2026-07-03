@@ -77,61 +77,79 @@
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+        <h2>Projects</h2>
 
-      <details class="project-card">
-        <summary>
+        <details class="project-card">
+            <summary>
             <div>
-            <h3>Dependency Triad</h3>
-            <p>
+                <h3>Dependency Triad</h3>
+                <p>
                 A framework for summarizing dependency structure and bounding
                 correlation-induced privacy leakage.
-            </p>
+                </p>
             </div>
-        </summary>
+            </summary>
 
-        <div class="project-details">
+            <div class="project-details">
             <h4>Abstract</h4>
             <p>
-            Local Differential Privacy protects user data before collection.
-            However, statistical dependencies between attributes can cause
-            additional correlation-induced leakage. Dependency Triad provides
-            a compact framework for summarizing dependency characteristics and
-            estimating privacy leakage under dependent data.
+                Dependency Triad studies privacy leakage in Local Differential Privacy
+                when user attributes are statistically dependent. It provides a compact
+                way to summarize dependency characteristics and estimate
+                correlation-induced privacy leakage in multidimensional data.
             </p>
 
             <h4>Main Findings</h4>
             <ul>
-            <li>Attribute dependencies can amplify privacy leakage under LDP.</li>
-            <li>Dependency structure can be summarized using compact parameters.</li>
-            <li>The framework supports efficient leakage analysis for multidimensional data.</li>
+                <li>Attribute dependencies can amplify privacy leakage under LDP.</li>
+                <li>Correlation-induced leakage can be analyzed using information-theoretic measures.</li>
+                <li>Compact dependency parameters can support efficient leakage estimation.</li>
             </ul>
 
             <h4>Resources</h4>
             <p>
-            <a href="#">Paper</a> |
-            <a href="#">Code</a> |
-            <a href="#">Artifact</a>
+                <a href="#">Paper</a> |
+                <a href="#">Code</a> |
+                <a href="#">Artifact</a>
             </p>
-        </div>
+            </div>
         </details>
 
-      <div class="card">
-        <h3>CoP: Coordinated Perturbation</h3>
-        <p>
-          A dependency-aware LDP mechanism for controlled disclosure under
-          multidimensional data collection.
-        </p>
-      </div>
+        <details class="project-card">
+            <summary>
+            <div>
+                <h3>CoP: Coordinated Perturbation</h3>
+                <p>
+                A dependency-aware LDP mechanism for controlled disclosure under
+                multidimensional data collection.
+                </p>
+            </div>
+            </summary>
 
-      <div class="card">
-        <h3>Prior-Aware Sampling under LDP</h3>
-        <p>
-          A study of how prior knowledge can guide sampling and privacy-budget
-          allocation in dependent multidimensional data.
-        </p>
-      </div>
-    </section>
+            <div class="project-details">
+            <h4>Abstract</h4>
+            <p>
+                CoP is a coordinated perturbation mechanism that uses prior dependency
+                knowledge to reduce correlation-induced leakage while preserving
+                useful disclosure for statistical analysis.
+            </p>
+
+            <h4>Main Findings</h4>
+            <ul>
+                <li>Coordinated perturbation can reduce unintended leakage.</li>
+                <li>Prior dependency knowledge can improve the privacy-utility trade-off.</li>
+                <li>CoP provides formal LDP protection while mitigating correlation-based inference.</li>
+            </ul>
+
+            <h4>Resources</h4>
+            <p>
+                <a href="#">Paper</a> |
+                <a href="#">Code</a> |
+                <a href="#">Artifact</a>
+            </p>
+            </div>
+        </details>
+        </section>
 
     <section id="publications">
       <h2>Publications</h2>
