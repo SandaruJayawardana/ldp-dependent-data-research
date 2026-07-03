@@ -11,14 +11,14 @@
 
   <header>
     <h1>Local Differential Privacy Under Statistical Dependence</h1>
-    <p>Information-theoretic privacy analysis, dependent data, and LDP mechanisms</p>
+    <p>LDP mechanisms, Privacy leakage, Information-theoretic privacy analysis, Dependency Triad, and Coordinated Perturbation</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
-    <a href="#themes">Research Themes</a>
     <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
+    <a href="#acknowledgements">Acknowledgments</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -32,48 +32,26 @@
         and statistically dependent user data.
       </p>
       <p>
-        Standard LDP mechanisms often assume that attributes are independent.
-        However, real-world data frequently contains strong correlations.
-        These dependencies may cause unintended information leakage, where
-        observing the perturbed output of one attribute reveals information
-        about another private attribute.
+        We first theoretically study the impact of attribute dependencies on privacy
+        under Local Differential Privacy (LDP) and develop algorithms to quantify
+        privacy leakage when the joint distributions of attributes are known.
+    </p>
+      <p>
+        Next, we introduce <strong>Dependency Triad</strong>, a compact metric for
+        characterizing attribute dependencies using potentially imperfect prior
+        distributional knowledge, enabling the estimation of potential privacy
+        leakage under LDP.
+        </p>
+      <p>
+        Building on these insights, we develop privacy-budget calibration algorithms
+        that leverage prior distributional knowledge to achieve improved
+        privacy-utility trade-offs. We further propose coordinated perturbation
+        mechanisms that exploit dependency information to reduce unintended privacy
+        leakage while preserving utility-relevant information.
+    </p>
+      <p>
+        Refer to <a href="#projects">Projects</a> for more details.
       </p>
-    </section>
-
-    <section id="themes">
-      <h2>Research Themes</h2>
-
-      <div class="card">
-        <h3>Correlation-Induced Leakage</h3>
-        <p>
-          Quantifying how dependencies between attributes amplify privacy
-          leakage under LDP.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Dependency-Aware Privacy Metrics</h3>
-        <p>
-          Developing information-theoretic measures and bounds for privacy
-          leakage in dependent data.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Coordinated Perturbation</h3>
-        <p>
-          Designing LDP mechanisms that use prior dependency knowledge to
-          reduce unintended disclosure.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Privacy–Utility Trade-offs</h3>
-        <p>
-          Evaluating mechanisms using estimation error, leakage reduction,
-          and attribute-inference attacks.
-        </p>
-      </div>
     </section>
 
     <section id="projects">
@@ -82,7 +60,39 @@
         <details class="project-card">
             <summary>
             <div>
-                <h3>Dependency Triad</h3>
+                <h3>The Hidden Cost of Correlation: Rethinking Privacy Leakage in Local Differential Privacy</h3>
+                <p>
+                Study on the impact of attribute correlation on LDP privacy leakage.
+                </p>
+            </div>
+            </summary>
+
+            <div class="project-details">
+            <h4>Abstract</h4>
+            <p>
+                Local differential privacy (LDP) has emerged as a promising paradigm for privacy-preserving data collection in distributed systems, where users contribute multi-dimensional records with potentially correlated attributes. Recent work has highlighted that correlation-induced privacy leakage (CPL) plays a critical role in shaping the privacy-utility trade-off under LDP, especially when correlations exist among attributes. Nevertheless, it remains unclear to what extent the prevailing assumptions and proposed solutions are valid and how significant CPL is in real-world data. To address this gap, we first perform a comprehensive statistical analysis of five widely used LDP mechanisms-GRR, RAPPOR, OUE, OLH and Exponential mechanism-to assess CPL across four real-world datasets. We identify that many primary assumptions and metrics in current approaches fall short of accurately characterising these leakages. Moreover, current studies have been limited to a set of pure LDP (i.e., δ=0) mechanisms. In response, we develop the first algorithmic framework to theoretically quantify CPL for any general approximated LDP ((ε,δ)-LDP) mechanism. We validate our theoretical results against empirical statistical results and provide a theoretical explanation for the observed statistical patterns. Finally, we propose two novel benchmarks to validate correlation analysis algorithms and evaluate the utility vs CPL of LDP mechanisms. Further, we demonstrate how these findings can be applied to achieve an efficient privacy-utility trade-off in real-world data governance. 
+            </p>
+
+            <h4>Main Findings</h4>
+            <ul>
+                <li>We provide a theoretical analysis of correlation-induced privacy leakage (CPL) under (ε,δ)-LDP mechanisms, introducing two novel algorithm.</li>
+                <li>We propose two novel benchmarks: (i) A CPL analysis benchmark to assess and compare existing privacy 
+                    analysis algorithms; and (ii) A privacy-utility benchmark that quantifies the trade-off between data utility and CPL
+                    exposure across LDP mechanisms.</li>
+                <li>We discover that CPL between two correlated attributes is asymmetric,.</li>
+            </ul>
+
+            <h4>Resources</h4>
+            <p>
+                <a href="https://arxiv.org/pdf/2508.12539">Paper</a>
+            </p>
+            </div>
+        </details>
+
+        <details class="project-card">
+            <summary>
+            <div>
+                <h3>Dependency Triad: A Metric to Quantify Dependencies Between Attributes for Local Differential Privacy</h3>
                 <p>
                 A framework for summarizing dependency structure and bounding
                 correlation-induced privacy leakage.
@@ -93,10 +103,18 @@
             <div class="project-details">
             <h4>Abstract</h4>
             <p>
-                Dependency Triad studies privacy leakage in Local Differential Privacy
-                when user attributes are statistically dependent. It provides a compact
-                way to summarize dependency characteristics and estimate
-                correlation-induced privacy leakage in multidimensional data.
+                Collecting multidimensional user data is essential for extracting rich insights across various applications. 
+                Local Differential Privacy (LDP) has emerged as a de facto standard for mitigating privacy risks in such scenarios. 
+                A key challenge in privacy-preserving multidimensional data collection lies in inter-attribute dependencies, as they can inadvertently reveal correlated information and increase privacy vulnerabilities.
+                Therefore, accurately measuring correlation-induced privacy leakage (CPL) is essential for privacy analysis and privacy-utility trade-off.
+                However, existing CPL analysis solutions either require accurate prior knowledge or face scalability challenges for large numbers of attributes and high-cardinality attributes. 
+                These limit their practical applicability in real data.
+            </p>
+            <p>
+                To address this research gap, we propose a novel metric, ''Dependency Triad'' (DT), which summarizes the pairwise dependency information relevant to CPL using three parameters and yields a constant-time conservative estimator of pairwise CPL. DT explicitly models uncertainty in prior distributional knowledge through its parameters, thereby delivering robust leakage estimates. 
+                Moreover, its robustness to sparse distributions makes it particularly suitable for high-cardinality attributes, while the pairwise formulation serves as a tractable building block for assessing total leakage in multidimensional settings.
+                Extensive experiments on synthetic and real datasets demonstrate that DT consistently estimates CPL across diverse dependency regimes and prior uncertainties, supporting trade-offs between privacy and utility, and thereby enabling reliable LDP deployments.
+
             </p>
 
             <h4>Main Findings</h4>
@@ -109,8 +127,7 @@
             <h4>Resources</h4>
             <p>
                 <a href="#">Paper</a> |
-                <a href="#">Code</a> |
-                <a href="#">Artifact</a>
+                <a href="https://github.com/SandaruJayawardana/dependency-triad-ccs26">Artifact</a>
             </p>
             </div>
         </details>
@@ -118,7 +135,7 @@
         <details class="project-card">
             <summary>
             <div>
-                <h3>CoP: Coordinated Perturbation</h3>
+                <h3>CoP: Coordinated Perturbation for Controlled Disclosure Under Local Differential Privacy</h3>
                 <p>
                 A dependency-aware LDP mechanism for controlled disclosure under
                 multidimensional data collection.
@@ -129,9 +146,22 @@
             <div class="project-details">
             <h4>Abstract</h4>
             <p>
-                CoP is a coordinated perturbation mechanism that uses prior dependency
-                knowledge to reduce correlation-induced leakage while preserving
-                useful disclosure for statistical analysis.
+                Collecting multidimensional user data is essential for personalized
+                services, yet it poses significant privacy risks. While privacy regulations like the GDPR and CPRA advocate for data minimization,
+                attribute correlations can inadvertently amplify unintentional information disclosure, leading to correlation-induced information
+                leakage (CIL). Although data collectors often possess rich prior
+                knowledge of these correlations, existing Local Differential Privacy
+                (LDP) mechanisms are inadequate for effectively leveraging this
+                information to reduce CIL.
+            </p>
+            <p>
+                In this paper, we propose CoP, a coordinated perturbation mechanism designed to mitigate CIL in multidimensional data collection
+                while preserving utility. Unlike traditional LDP approaches, CoP
+                explicitly incorporates prior distribution knowledge to coordinate
+                the perturbation process across attributes. By optimizing the perturbation strategy based on known correlations, CoP achieves a
+                better privacy-utility trade-off. Extensive evaluations across both
+                synthetic and real-world datasets demonstrate that CoP significantly outperforms state-of-the-art LDP mechanisms in reducing
+                disclosure while preserving analytical accuracy.
             </p>
 
             <h4>Main Findings</h4>
@@ -144,8 +174,9 @@
             <h4>Resources</h4>
             <p>
                 <a href="#">Paper</a> |
-                <a href="#">Code</a> |
-                <a href="#">Artifact</a>
+                <a href="https://github.com/SandaruJayawardana/CoP-artifacts-PETS">Artifact</a> |
+                <a href="#">Slides</a> |
+                <a href="#">Poster</a>
             </p>
             </div>
         </details>
@@ -157,19 +188,40 @@
         <li>
           <strong>CoP: Coordinated Perturbation for Controlled Disclosure Under Local Differential Privacy</strong>
           <br />
-          PETS 2026 (Manuscript / Artifact).
+          To appear at PETS 2026 (<a href="#">Paper</a> / <a href="https://github.com/SandaruJayawardana/CoP-artifacts-PETS">Artifact</a>).
         </li>
         <li>
           <strong>The Hidden Cost of Correlation: Rethinking Privacy Leakage in Local Differential Privacy</strong>
           <br />
-          (Manuscript).
+          Preprint (<a href="https://arxiv.org/pdf/2508.12539">Paper</a>).
         </li>
         <li>
           <strong>Dependency Triad: A Metric to Quantify Dependencies Between Attributes for Local Differential Privacy</strong>
           <br />
-          To appear in ACM CCS 2026 (Manuscript / Artifact).
+          To appear at ACM CCS 2026 (<a href="#">Paper</a> / <a href="https://github.com/SandaruJayawardana/dependency-triad-ccs26">Artifact</a>).
+        </li>
+        <li>
+          <strong>Local Differential Privacy Under Statistical Dependence</strong>
+          <br />
+          <a href="#">Thesis</a>.
         </li>
       </ul>
+    </section>
+
+    <section id="acknowledgements">
+      <h2>Acknowledgements</h2>
+      <p>
+        I would like to express my sincere gratitude to my supervisors, 
+        A/Prof. Kanchana Thilakarathna, Prof. Ming Ding and Prof. Sennur Ulukus, 
+        for their invaluable guidance and support throughout my research journey. 
+        Their expertise and encouragement have been instrumental in shaping 
+        my work on local differential privacy and dependent data.
+      </p>
+
+      <p>
+        I would also like to acknowledge the financial support from Meta Research Awards
+        for Towards Trustworthy Products in AR, VR, and Smart Devices.
+      </p>
     </section>
 
     <section id="contact">
