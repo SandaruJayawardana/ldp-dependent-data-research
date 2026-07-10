@@ -241,6 +241,12 @@ footer {
   border-color: #0b3d91;
 }
 
+#hidden-cost-of-correlation-paper-paper-tab:checked + label {
+  background: #0b3d91;
+  color: white;
+  border-color: #0b3d91;
+}
+
 
 /* Artifact panels */
 
@@ -269,6 +275,15 @@ footer {
   display: block;
 }
 
+#cop-files-tab:checked
+  ~ .files-panel {
+  display: block;
+}
+
+#hidden-cost-of-correlation-paper-paper-tab:checked
+  ~ .paper-panel {
+  display: block;
+}
 
 /* Artifact header and buttons */
 
