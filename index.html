@@ -3,11 +3,108 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LDP for Dependent Data</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Local Differential Privacy for Dependent Data
+  </title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Local Differential Privacy for Dependent Data",
+        "url": "https://github.com/SandaruJayawardana/ldp-dependent-data-research/",
+        "description": "Research on privacy leakage and privacy-preserving data collection for statistically dependent multidimensional data under Local Differential Privacy.",
+        "author": {
+          "@id": "#sandaru"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "#sandaru",
+        "name": "Sandaru Jayawardana",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The University of Sydney"
+        },
+        "sameAs": [
+          "https://orcid.org/0009-0003-6544-9212",
+          "https://scholar.google.com.au/citations?user=qNoHcGQAAAAJ&hl=en",
+          "https://github.com/SandaruJayawardana"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="google-site-verification" content="5MzA8ZAdgSgYL9XOlOZtJ_4pRyLfD4iajeD7WFTCj0Y" />
+
+  <!-- Standard metadata -->
+  <meta
+    name="description"
+    content="Research on Local Differential Privacy for statistically dependent and multidimensional data."
+  >
+
+  <meta name="author" content="Sandaru Jayawardana">
+
+  <!-- Open Graph metadata -->
+  <meta
+    property="og:title"
+    content="Local Differential Privacy for Dependent Data"
+  >
+
+  <meta
+    property="og:description"
+    content="Understanding and mitigating unintended privacy leakage caused by statistical dependencies under Local Differential Privacy."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://github.com/SandaruJayawardana/ldp-dependent-data-research/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://github.com/SandaruJayawardana/ldp-dependent-data-research/blob/main/files/about.jpg"
+  >
+
+  <!-- Twitter / X preview -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Local Differential Privacy for Dependent Data"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Understanding and mitigating unintended privacy leakage caused by statistical dependencies under LDP."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://github.com/SandaruJayawardana/ldp-dependent-data-research/blob/main/files/about.jpg"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -48,7 +145,7 @@
         privacy leakage when the joint distributions of attributes are known.
     </p>
       <p>
-        Next, we introduce <strong>Dependency Triad</strong>, a compact metric for
+        Next, we introduce Dependency Triad (DT), a compact metric for
         characterizing attribute dependencies using potentially imperfect prior
         distributional knowledge, enabling the estimation of potential privacy
         leakage under LDP.
@@ -187,6 +284,11 @@
                 <li>Compact dependency parameters can support efficient leakage estimation.</li>
             </ul>
 
+            <div class="project-meta">
+              <span class="venue-badge">ACM CCS 2026</span>
+              <span class="status-badge">To appear</span>
+            </div>
+
             <h4>Resources</h4>
             <p>
                 <a href="#">Paper</a> |
@@ -233,6 +335,11 @@
                 <li>Prior dependency knowledge can improve the privacy-utility trade-off.</li>
                 <li>CoP provides formal LDP protection while mitigating correlation-based inference.</li>
             </ul>
+
+            <div class="project-meta">
+              <span class="venue-badge">PETS 2026</span>
+              <span class="status-badge">To appear</span>
+            </div>
 
             <h4>Resources</h4>
             <div class="artifact-section">
