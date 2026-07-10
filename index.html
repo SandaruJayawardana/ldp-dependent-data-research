@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,9 +87,154 @@
             </ul>
 
             <h4>Resources</h4>
-            <p>
-                <a href="https://arxiv.org/pdf/2508.12539">Paper</a>
-            </p>
+            
+                <!-- Artifact viewer -->
+            <div class="artifact-section">
+
+              <div class="artifact-tabs">
+
+                <!-- Paper tab -->
+                <input
+                  type="radio"
+                  name="cop-artifact"
+                  id="cop-paper-tab"
+                  checked
+                >
+
+                <label for="cop-paper-tab">
+                  Paper
+                </label>
+
+                <!-- Poster tab -->
+                <input
+                  type="radio"
+                  name="cop-artifact"
+                  id="cop-poster-tab"
+                >
+
+                <label for="cop-poster-tab">
+                  Poster
+                </label>
+
+                <!-- Slides tab -->
+                <input
+                  type="radio"
+                  name="cop-artifact"
+                  id="cop-slides-tab"
+                >
+
+                <label for="cop-slides-tab">
+                  Slides
+                </label>
+
+                <!-- Paper content -->
+                <div class="artifact-panel paper-panel">
+                  <div class="artifact-toolbar">
+                    <strong>Research Paper</strong>
+
+                    <div class="artifact-links">
+                      <a
+                        href="files/cop-paper.pdf"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Open PDF
+                      </a>
+
+                      <a href="files/cop-paper.pdf" download>
+                        Download
+                      </a>
+                    </div>
+                  </div>
+
+                  <object
+                    data="files/cop-paper.pdf"
+                    type="application/pdf"
+                    class="artifact-viewer"
+                  >
+                    <p>
+                      Your browser cannot display this PDF.
+                      <a href="files/cop-paper.pdf" target="_blank">
+                        Open the paper
+                      </a>.
+                    </p>
+                  </object>
+                </div>
+
+                <!-- Poster content -->
+                <div class="artifact-panel poster-panel">
+                  <div class="artifact-toolbar">
+                    <strong>Research Poster</strong>
+
+                    <div class="artifact-links">
+                      <a
+                        href="files/cop-poster.pdf"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Open PDF
+                      </a>
+
+                      <a href="files/cop-poster.pdf" download>
+                        Download
+                      </a>
+                    </div>
+                  </div>
+
+                  <object
+                    data="files/cop-poster.pdf"
+                    type="application/pdf"
+                    class="artifact-viewer poster-viewer"
+                  >
+                    <p>
+                      Your browser cannot display this PDF.
+                      <a href="files/cop-poster.pdf" target="_blank">
+                        Open the poster
+                      </a>.
+                    </p>
+                  </object>
+                </div>
+
+                <!-- Slides content -->
+                <div class="artifact-panel slides-panel">
+                  <div class="artifact-toolbar">
+                    <strong>Presentation Slides</strong>
+
+                    <div class="artifact-links">
+                      <a
+                        href="files/cop-slides.pdf"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Open PDF
+                      </a>
+
+                      <a href="files/cop-slides.pdf" download>
+                        Download PDF
+                      </a>
+
+                      <a href="files/cop-slides.pptx" download>
+                        Download PPTX
+                      </a>
+                    </div>
+                  </div>
+
+                  <object
+                    data="files/cop-slides.pdf"
+                    type="application/pdf"
+                    class="artifact-viewer"
+                  >
+                    <p>
+                      Your browser cannot display the slides.
+                      <a href="files/cop-slides.pdf" target="_blank">
+                        Open the slides as a PDF
+                      </a>.
+                    </p>
+                  </object>
+                </div>
+
+              </div>
+            </div>
             </div>
         </details>
 
@@ -213,7 +361,7 @@
       <h2>Acknowledgements</h2>
       <p>
         I would like to express my sincere gratitude to my supervisors, 
-        A/Prof. Kanchana Thilakarathna, Prof. Ming Ding and Prof. Sennur Ulukus, 
+        A/Prof. <a href="https://profiles.sydney.edu.au/kanchana.thilakarathna">Kanchana Thilakarathna</a>, Prof. <a href="https://people.csiro.au/D/M/Ming-Ding">Ming Ding</a> and Prof. <a href="https://ece.umd.edu/clark/faculty/490/Sennur-Ulukus">Sennur Ulukus</a>, 
         for their invaluable guidance and support throughout my research journey. 
         Their expertise and encouragement have been instrumental in shaping 
         my work on local differential privacy and dependent data.
@@ -240,7 +388,11 @@
   </main>
 
   <footer>
-    <p>© 2026 Sandaru Jayawardana</p>
+    <p>
+      © 2026 Sandaru Jayawardana
+      <span class="footer-separator">•</span>
+      Last updated: {{ site.time | date: "%d %B %Y" }}
+    </p>
   </footer>
 
 </body>
